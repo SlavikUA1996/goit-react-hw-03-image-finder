@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchImages } from './Pixabay/Api';
+import { fetchImages } from '../services/Api';
 import { Searchbar } from './Searchbar/Searchbar';
 import { Loader } from './Loader/Loader';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -81,7 +81,14 @@ export class App extends Component {
     return (
       <>
         <Searchbar onSubmit={this.formSubmit} />
-
+{images.length > 0 && !page && (
+          <>
+            <ImageGallery images={images} onClick={this.openModal} />
+            {loadMore && isLoading < fetchImages && (
+              <p className="Message">No more pictures</p>
+            )}
+          </>
+        )}
         {isLoading ? (
           <Loader />
         ) : (

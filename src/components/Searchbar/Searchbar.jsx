@@ -24,7 +24,7 @@ export class Searchbar extends Component {
     return (
       <header>
         <form onSubmit={this.handleSubmit}>
-          <button type="submit">
+          <button type="submit">Search
           </button>
 
           <input
