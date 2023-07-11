@@ -89,17 +89,16 @@ export class App extends Component {
             )}
           </>
         )}
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <ImageGallery images={images} openModal={this.openModal} />
-        )}
+        
+        {<ImageGallery images={images} openModal={this.openModal} />
+        }
 
         {loadMore && <Button onloadMore={this.onloadMore} page={page} />}
 
         {showModal && (
           <Modal largeImageURL={largeImageURL} onClose={this.closeModal} />
         )}
+        {isLoading && <Loader />}
       </>
     );
   }
