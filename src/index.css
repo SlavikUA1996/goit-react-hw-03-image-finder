@@ -7,6 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow: hidden;
 }
 
 code {
@@ -57,7 +59,7 @@ button {
   cursor: pointer;
   display: inline-flex;
   font-family: 'JetBrains Mono', monospace;
-  height: 48px;
+  height: 28px;
   justify-content: center;
   line-height: 1;
   list-style: none;
@@ -94,10 +96,35 @@ button:active {
 
 input {
   position: relative;
-  font-size: 1.5em;
+  font-size: 1em;
   background: linear-gradient(21deg, #10abff, #1beabd);
   padding: 3px;
   display: inline-block;
   border-radius: 50em;
   color: #fff;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1200;
+}
+
+.Modal {
+  max-width: calc(100vw - 60px);
+  max-height: calc(100vh - 40px);
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
